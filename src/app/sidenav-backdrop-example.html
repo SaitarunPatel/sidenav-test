@@ -1,0 +1,62 @@
+<!-- <mat-drawer-container class="example-container" [hasBackdrop]="hasBackdrop.value">
+  <mat-drawer #drawer [mode]="mode.value" position="end">I'm a drawer</mat-drawer>
+  <mat-drawer-content>
+    <mat-form-field appearance="fill">
+      <mat-label>Sidenav mode</mat-label>
+      <mat-select #mode value="side">
+        <mat-option value="side">Side</mat-option>
+        <mat-option value="over">Over</mat-option>
+        <mat-option value="push">Push</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Has backdrop</mat-label>
+      <mat-select #hasBackdrop>
+        <mat-option>Unset</mat-option>
+        <mat-option [value]="true">True</mat-option>
+        <mat-option [value]="false">False</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+  </mat-drawer-content>
+</mat-drawer-container> -->
+
+<div class="sidenav-container">
+  <mat-drawer-container>
+  <mat-drawer #rightsideNav mode="side" [(opened)]="stateofsidenav" position="end" class="actual-sidenav-bar">
+    Right drawer
+  </mat-drawer>
+  <mat-drawer-content class="mat-content">
+    <div *ngIf="stateofsidenav">
+      <button class="button-sidenav" (click)="changestateofSidenav()">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+    </div>
+    <div *ngIf="!stateofsidenav">
+      <button class="button-sidenav" (click)="changestateofSidenav()">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+    
+  </mat-drawer-content>
+  </mat-drawer-container>
+</div>
+
+
+
+<!-- <div>
+  <mat-drawer-container class="example-container">
+  <mat-drawer #rightsideNav mode="side" opened="true" position="end">
+    Right drawer
+  </mat-drawer>
+  <mat-drawer-content class="mat-content">
+    <button class="button-sidenav" (click)="rightsideNav.toggle()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+  </mat-drawer-content>
+  </mat-drawer-container>
+</div> -->
+
+<!-- Copyright 2022 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at https://angular.io/license -->
